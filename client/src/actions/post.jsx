@@ -14,7 +14,9 @@ import {
 //GET ALL Posts
 export const getPosts = () => async dispatch => {
 	try {
-		const res = await axios.get('http://localhost:6001/api/post')
+		const res = await axios.get(
+			'https://social-network-platform-rsf7.onrender.com/api/post'
+		)
 
 		dispatch({
 			type: GET_POSTS,
@@ -34,7 +36,9 @@ export const getPosts = () => async dispatch => {
 // Add like
 export const addLike = id => async dispatch => {
 	try {
-		const res = await axios.put(`http://localhost:6001/api/post/like/${id}`)
+		const res = await axios.put(
+			`https://social-network-platform-rsf7.onrender.com/api/post/like/${id}`
+		)
 
 		dispatch({
 			type: UPDATE_LIKES,
@@ -54,7 +58,9 @@ export const addLike = id => async dispatch => {
 // Remove like
 export const removeLike = id => async dispatch => {
 	try {
-		const res = await axios.put(`http://localhost:6001/api/post/unlike/${id}`)
+		const res = await axios.put(
+			`https://social-network-platform-rsf7.onrender.com/api/post/unlike/${id}`
+		)
 
 		dispatch({
 			type: UPDATE_LIKES,
@@ -74,7 +80,9 @@ export const removeLike = id => async dispatch => {
 //Delete Post
 export const deletePost = id => async dispatch => {
 	try {
-		const res = await axios.delete(`http://localhost:6001/api/post/${id}`)
+		const res = await axios.delete(
+			`https://social-network-platform-rsf7.onrender.com/api/post/${id}`
+		)
 
 		dispatch({
 			type: DELETE_POST,
@@ -101,7 +109,7 @@ export const addPost = formdata => async dispatch => {
 	}
 	try {
 		const res = await axios.post(
-			'http://localhost:6001/api/post',
+			'https://social-network-platform-rsf7.onrender.com/api/post',
 			formdata,
 			config
 		)
@@ -124,7 +132,9 @@ export const addPost = formdata => async dispatch => {
 //GET  Post
 export const getPost = id => async dispatch => {
 	try {
-		const res = await axios.get(`http://localhost:6001/api/post/${id}`)
+		const res = await axios.get(
+			`https://social-network-platform-rsf7.onrender.com/api/post/${id}`
+		)
 
 		dispatch({
 			type: GET_POST,
@@ -150,7 +160,7 @@ export const addComment = (postId, formdata) => async dispatch => {
 	}
 	try {
 		const res = await axios.post(
-			`http://localhost:6001/api/post/comment/${postId}`,
+			`https://social-network-platform-rsf7.onrender.com/api/post/comment/${postId}`,
 			formdata,
 			config
 		)
@@ -174,7 +184,7 @@ export const addComment = (postId, formdata) => async dispatch => {
 export const deleteComment = (postId, commentId) => async dispatch => {
 	try {
 		await axios.delete(
-			`http://localhost:6001/api/post/comment/${postId}/${commentId}`
+			`https://social-network-platform-rsf7.onrender.com/api/post/comment/${postId}/${commentId}`
 		)
 
 		dispatch({

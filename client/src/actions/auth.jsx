@@ -19,7 +19,9 @@ export const loadUser = () => async dispatch => {
 	}
 
 	try {
-		const res = await axios.get('http://localhost:6001/api/auth')
+		const res = await axios.get(
+			'https://social-network-platform-rsf7.onrender.com/api/auth'
+		)
 		dispatch({
 			type: USER_LOADED,
 			payload: res.data
@@ -37,7 +39,7 @@ export const register =
 
 		try {
 			const res = await axios.post(
-				'http://localhost:6001/api/user',
+				'https://social-network-platform-rsf7.onrender.com/api/user',
 				body,
 				config
 			)
@@ -62,7 +64,11 @@ export const login = (email, password) => async dispatch => {
 	const body = JSON.stringify({ email, password })
 
 	try {
-		const res = await axios.post('http://localhost:6001/api/auth', body, config)
+		const res = await axios.post(
+			'https://social-network-platform-rsf7.onrender.com/api/auth',
+			body,
+			config
+		)
 
 		dispatch({
 			type: LOGIN_SUCCESS,
