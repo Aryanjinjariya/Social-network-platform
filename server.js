@@ -18,6 +18,10 @@ app.use(
 	})
 )
 
+app.get('/', (req, res) => {
+	res.send('API Running Successfully')
+})
+
 // Define Routes
 app.use('/api/user', require('./route/user'))
 app.use('/api/auth', require('./route/auth'))
