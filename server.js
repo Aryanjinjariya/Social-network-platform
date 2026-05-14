@@ -13,7 +13,7 @@ app.use(express.json())
 
 app.use(
 	cors({
-		origin: 'https://social-network-platform-rsf7.onrender.com',
+		origin: 'https://social-network-platform.vercel.app',
 		credentials: true
 	})
 )
